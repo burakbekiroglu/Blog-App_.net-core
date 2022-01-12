@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "BlogApp.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/BlogApp.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogApp.Shared.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BlogApp.Shared/1.0.0": {
+      "type": "project",
+      "path": "../BlogApp.Shared/BlogApp.Shared.csproj",
+      "msbuildProject": "../BlogApp.Shared/BlogApp.Shared.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "BlogApp.Shared >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Burak\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Burak\\Desktop\\proje\\Blog-App_.net-core\\BlogApp\\BlogApp.Shared\\BlogApp.Shared.csproj": {
+              "projectPath": "C:\\Users\\Burak\\Desktop\\proje\\Blog-App_.net-core\\BlogApp\\BlogApp.Shared\\BlogApp.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
