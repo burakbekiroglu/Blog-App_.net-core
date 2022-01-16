@@ -14,7 +14,7 @@ namespace BlogApp.Entities.Concrete
         public string Content { get; set; }
         public string Thumbnail { get; set; }
         public DateTime Date { get; set; }
-        public int WievsCount { get; set; }
+        public int ViewsCount { get; set; }
         public int CommentCount { get; set; }
         public string SeoAuthor { get; set; }
         public string SeoDescription { get; set; }
