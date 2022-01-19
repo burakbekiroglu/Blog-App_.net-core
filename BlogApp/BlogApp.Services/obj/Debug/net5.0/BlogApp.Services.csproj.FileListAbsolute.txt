@@ -10,3 +10,10 @@ C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Services\obj\Deb
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Services\obj\Debug\net5.0\BlogApp.Services.dll
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Services\obj\Debug\net5.0\ref\BlogApp.Services.dll
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Services\obj\Debug\net5.0\BlogApp.Services.pdb
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Services\bin\Debug\net5.0\BlogApp.Data.dll
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Services\bin\Debug\net5.0\BlogApp.Entities.dll
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Services\bin\Debug\net5.0\BlogApp.Shared.dll
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Services\bin\Debug\net5.0\BlogApp.Data.pdb
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Services\bin\Debug\net5.0\BlogApp.Entities.pdb
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Services\bin\Debug\net5.0\BlogApp.Shared.pdb
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Services\obj\Debug\net5.0\BlogApp.Services.csproj.CopyComplete
