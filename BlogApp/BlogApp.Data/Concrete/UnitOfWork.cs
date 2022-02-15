@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BlogApp.Data.Concrete
 {
-    class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly BlogAppContext _context;
         private EfArticleRepository _articleRepository;
