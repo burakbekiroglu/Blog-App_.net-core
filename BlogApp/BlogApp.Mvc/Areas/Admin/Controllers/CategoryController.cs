@@ -57,6 +57,16 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
 
         }
 
+        public async Task<JsonResult> GetAllCategories()
+        {
+            var result = await _categoryService.GetAll();
+            var categories = JsonSerializer.Serialize(result.Data,new JsonSerializerOptions {
+            
+                    ReferenceHandler=System.Text.Json.Serialization.ReferenceHandler.Preserve
+            });
+            return Json(categories);
+        }
+
 
     }
 }
