@@ -1,9 +1,13 @@
-﻿using BlogApp.Services.Abstract;
+﻿using BlogApp.Entities.Dtos;
+using BlogApp.Mvc.Areas.Admin.Models;
+using BlogApp.Services.Abstract;
+using BlogApp.Shared.Utilities.Extensions;
 using BlogApp.Shared.Utilities.Results.ComplexTypes;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace BlogApp.Mvc.Areas.Admin.Controllers
@@ -21,5 +25,38 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
             var result = await _categoryService.GetAll();
             return View(result.Data);
         }
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return PartialView("_CategoryAddPartial");
+        }
+        [HttpPost]
+        public async Task <IActionResult> Add(CategoryAddDto categoryAddDto)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _categoryService.Add(categoryAddDto,"Burak Bekiroglu");
+                if (result.ResultStatus==ResultStatus.Success)
+                {
+                    var categoryAddAjaxModel = JsonSerializer.Serialize(new CategoryAddAjaxViewModel
+                    {
+
+                        CategoryDto = result.Data,
+                        CategoryAddPartial = await this.RenderViewToStringAsync("_CategoryAddPartial", categoryAddDto)
+                    });
+                    return Json(categoryAddAjaxModel);
+                }
+            }
+            var categoryAddAjaxErrorModel = JsonSerializer.Serialize(new CategoryAddAjaxViewModel
+            {
+                CategoryAddPartial = await this.RenderViewToStringAsync("_CategoryAddPartial", categoryAddDto)
+            });
+
+            return Json(categoryAddAjaxErrorModel);
+
+
+        }
+
+
     }
 }

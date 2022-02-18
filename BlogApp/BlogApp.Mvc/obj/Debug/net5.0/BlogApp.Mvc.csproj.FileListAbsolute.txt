@@ -405,3 +405,6 @@ C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\ne
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_LayoutJsPartial.cshtml.g.cs
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_LayoutSideBarNavPartial.cshtml.g.cs
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\_CategoryAddPartial.cshtml.g.cs
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
