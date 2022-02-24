@@ -3,6 +3,7 @@ using BlogApp.Services.AutoMapper.Profiles;
 using BlogApp.Services.Extansions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,46 +28,69 @@ namespace BlogApp.Mvc
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews().AddRazorRuntimeCompilation().AddJsonOptions(opt=> {
+            services.AddControllersWithViews().AddRazorRuntimeCompilation().AddJsonOptions(opt =>
+            {
 
                 opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
             });
-            services.AddAutoMapper(typeof(CategoryProfile),typeof(ArticleProfile));
+            services.AddSession();
+            services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile));
             services.LoadMyServices();
-        }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment())
+            services.ConfigureApplicationCookie(options =>
             {
-                app.UseDeveloperExceptionPage();
-                app.UseStatusCodePages();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
+                options.LoginPath = new PathString("/Admin/User/Login");
+                options.LogoutPath = new PathString("/Admin/User/Logout");
+                options.Cookie = new CookieBuilder {
 
-            app.UseRouting();
+                    Name = "BlogApp",
+                    HttpOnly = true,
+                    SameSite=SameSiteMode.Strict,
+                    SecurePolicy=CookieSecurePolicy.SameAsRequest, //always
+                };
 
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapAreaControllerRoute(
-                        name: "Admin",
-                        areaName: "Admin",
-                        pattern: "Admin/{controller=Home}/{Action=Index}/{id?}"
-                    );
-                endpoints.MapDefaultControllerRoute();
+                options.SlidingExpiration = true;
+                options.ExpireTimeSpan = System.TimeSpan.FromDays(7);
+                options.AccessDeniedPath = new PathString("/Admin/User/AccessDenied");
+                
             });
+
         }
-    }
-}
+
+            // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+            {
+                if (env.IsDevelopment())
+                {
+                    app.UseDeveloperExceptionPage();
+                    app.UseStatusCodePages();
+                }
+                else
+                {
+                    app.UseExceptionHandler("/Error");
+                    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                    app.UseHsts();
+                }
+
+                app.UseHttpsRedirection();
+                app.UseSession();
+                app.UseStaticFiles();
+
+                app.UseRouting();
+
+                app.UseAuthentication();
+                app.UseAuthorization();
+
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapAreaControllerRoute(
+                            name: "Admin",
+                            areaName: "Admin",
+                            pattern: "Admin/{controller=Home}/{Action=Index}/{id?}"
+                        );
+                    endpoints.MapDefaultControllerRoute();
+                });
+            }
+        }
+    } 
