@@ -29,54 +29,54 @@ namespace BlogApp.Data.Concrete.EntityFramework.Mappings
             builder.HasOne(c => c.Article).WithMany(a => a.Comments).HasForeignKey(c => c.ArticleId);
             builder.ToTable("Comments");
 
-            builder.HasData(new Comment
-            {
-                Id = 1,
-                ArticleId=1,
-                Text= "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. " +
-                "Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak " +
-                "üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri " +
-                "endüstri standardı sahte metinler olarak kullanılmıştır.",
-                IsActive = true,
-                IsDeleted = false,
-                CreatedByName = "InitialCreate",
-                CreatedDate = DateTime.Now,
-                ModifiedByName = "InitialCreate",
-                ModifiedDate = DateTime.Now,
-                Note = "C# makale yorumu",
-            },
-            new Comment
-            {
-                Id = 2,
-                ArticleId = 2,
-                Text = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. " +
-                "Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak " +
-                "üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri " +
-                "endüstri standardı sahte metinler olarak kullanılmıştır.",
-                IsActive = true,
-                IsDeleted = false,
-                CreatedByName = "InitialCreate",
-                CreatedDate = DateTime.Now,
-                ModifiedByName = "InitialCreate",
-                ModifiedDate = DateTime.Now,
-                Note = "C++ makale yorumu",
-            },
-            new Comment
-            {
-                Id = 3,
-                ArticleId = 3,
-                Text = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. " +
-                "Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak " +
-                "üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri " +
-                "endüstri standardı sahte metinler olarak kullanılmıştır.",
-                IsActive = true,
-                IsDeleted = false,
-                CreatedByName = "InitialCreate",
-                CreatedDate = DateTime.Now,
-                ModifiedByName = "InitialCreate",
-                ModifiedDate = DateTime.Now,
-                Note = "JavaScript makale yorumu",
-            });
+            //builder.HasData(new Comment
+            //{
+            //    Id = 1,
+            //    ArticleId=1,
+            //    Text= "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. " +
+            //    "Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak " +
+            //    "üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri " +
+            //    "endüstri standardı sahte metinler olarak kullanılmıştır.",
+            //    IsActive = true,
+            //    IsDeleted = false,
+            //    CreatedByName = "InitialCreate",
+            //    CreatedDate = DateTime.Now,
+            //    ModifiedByName = "InitialCreate",
+            //    ModifiedDate = DateTime.Now,
+            //    Note = "C# makale yorumu",
+            //},
+            //new Comment
+            //{
+            //    Id = 2,
+            //    ArticleId = 2,
+            //    Text = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. " +
+            //    "Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak " +
+            //    "üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri " +
+            //    "endüstri standardı sahte metinler olarak kullanılmıştır.",
+            //    IsActive = true,
+            //    IsDeleted = false,
+            //    CreatedByName = "InitialCreate",
+            //    CreatedDate = DateTime.Now,
+            //    ModifiedByName = "InitialCreate",
+            //    ModifiedDate = DateTime.Now,
+            //    Note = "C++ makale yorumu",
+            //},
+            //new Comment
+            //{
+            //    Id = 3,
+            //    ArticleId = 3,
+            //    Text = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. " +
+            //    "Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak " +
+            //    "üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri " +
+            //    "endüstri standardı sahte metinler olarak kullanılmıştır.",
+            //    IsActive = true,
+            //    IsDeleted = false,
+            //    CreatedByName = "InitialCreate",
+            //    CreatedDate = DateTime.Now,
+            //    ModifiedByName = "InitialCreate",
+            //    ModifiedDate = DateTime.Now,
+            //    Note = "JavaScript makale yorumu",
+            //});
             
 
         }

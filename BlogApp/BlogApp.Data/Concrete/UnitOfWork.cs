@@ -15,8 +15,7 @@ namespace BlogApp.Data.Concrete
         private EfArticleRepository _articleRepository;
         private EfCategoryRepository _categoryRepository;
         private EfCommentRepository _commentRepository;
-        private EFRoleRepository _roleRepository;
-        private EfUserRepository _userRepository;
+        
 
         public UnitOfWork(BlogAppContext context)
         {
@@ -29,9 +28,7 @@ namespace BlogApp.Data.Concrete
 
         public ICommentRepository Comments => _commentRepository ?? new EfCommentRepository(_context);
 
-        public IRoleRepository Roles => _roleRepository ?? new EFRoleRepository(_context);
-
-        public IUserRepository Users => _userRepository ?? new EfUserRepository(_context);
+    
 
         public async ValueTask DisposeAsync()
         {

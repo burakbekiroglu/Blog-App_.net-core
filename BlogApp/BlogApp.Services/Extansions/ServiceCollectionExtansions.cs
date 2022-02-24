@@ -1,6 +1,7 @@
 ﻿using BlogApp.Data.Abstract;
 using BlogApp.Data.Concrete;
 using BlogApp.Data.Concrete.EntityFramework.Contexts;
+using BlogApp.Entities.Concrete;
 using BlogApp.Services.Abstract;
 using BlogApp.Services.Concrete;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +18,7 @@ namespace BlogApp.Services.Extansions
         public static IServiceCollection LoadMyServices(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddDbContext<BlogAppContext>();
+            serviceCollection.AddIdentity<User, Role>().AddEntityFrameworkStores<BlogAppContext>();
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
             serviceCollection.AddScoped<ICategoryService, CategoryManager>();
             serviceCollection.AddScoped<IArticleService, ArticleManager>();
