@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "BlogApp.Mvc/1.0.0": {
         "dependencies": {
+          "AutoMapper": "10.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.0.1",
           "BlogApp.Services": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.0",
