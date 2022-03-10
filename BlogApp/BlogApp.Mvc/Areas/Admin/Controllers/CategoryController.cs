@@ -3,6 +3,7 @@ using BlogApp.Mvc.Areas.Admin.Models;
 using BlogApp.Services.Abstract;
 using BlogApp.Shared.Utilities.Extensions;
 using BlogApp.Shared.Utilities.Results.ComplexTypes;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 namespace BlogApp.Mvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;

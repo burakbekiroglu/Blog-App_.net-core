@@ -16,6 +16,7 @@ using System.Text.Json;
 using BlogApp.Mvc.Areas.Admin.Models;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BlogApp.Mvc.Areas.Admin.Controllers
 {
@@ -23,15 +24,18 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
     public class UserController : Controller
     {
         private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
         private readonly IWebHostEnvironment _env;
         private readonly IMapper _mapper;
 
-        public UserController(UserManager<User> userManager, IWebHostEnvironment env, IMapper mapper)
+        public UserController(UserManager<User> userManager, IWebHostEnvironment env, IMapper mapper,SignInManager<User> signInManager)
         {
             _userManager = userManager;
             _env = env;
             _mapper = mapper;
+            _signInManager = signInManager;
         }
+        [Authorize]
         public async  Task<IActionResult> Index()
         {
             var users = await _userManager.Users.ToListAsync();
@@ -41,13 +45,45 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
             });
         }
         [HttpGet]
-        public IActionResult UserLogin()
+        public IActionResult Login()
         {
 
-            return View();
+            return View("UserLogin");
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(UserLoginDto userLoginDto)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByEmailAsync(userLoginDto.Email);
+                if (user!=null)
+                {
+                    var result = await _signInManager.PasswordSignInAsync(user, userLoginDto.Password, userLoginDto.RememberMe, false);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index","Home");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("","E-posta adresiniz veya şifreniz yanlıştır");
+                        return View("UserLogin");
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "E-posta adresiniz veya şifreniz yanlıştır");
+                    return View("UserLogin");
+                }
+            }
+            else
+            {
+                return View("UserLogin");
+            }
+            
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<JsonResult> GetAllUsers()
         {
             var users = await _userManager.Users.ToListAsync();
@@ -63,6 +99,7 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Add()
         {
             return PartialView("_UserAddPartial");
@@ -121,7 +158,7 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
 
 
         }
-
+        [Authorize]
         public async Task<JsonResult> Delete(int userId)
         {
             var user = await _userManager.FindByIdAsync(userId.ToString());
@@ -152,7 +189,7 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
                 return Json(deletedUserErrorModel);
             }
         }
-        
+        [Authorize]
         [HttpGet]
         public async Task<PartialViewResult> Update(int userId)
         {
@@ -160,7 +197,7 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
             var userUpdateDto = _mapper.Map<UserUpdateDto>(user);
             return PartialView("_UserUpdatePartial", userUpdateDto);
         }
-
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Update(UserUpdateDto userUpdateDto)
         {
@@ -224,6 +261,7 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
             }
 
         }
+        [Authorize]
         public async Task<string> ImageUpload(string userName,IFormFile pictureFile)
         {
             string wwwroot = _env.WebRootPath;
@@ -241,7 +279,7 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
         }
 
 
-
+        [Authorize]
         public bool ImageDelete(string pictureName)
         {
             string wwwroot = _env.WebRootPath;
