@@ -412,3 +412,6 @@ C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\ne
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\Index.cshtml.g.cs
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\_UserAddPartial.cshtml.g.cs
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_UserLoginLayout.cshtml.g.cs
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\UserLogin.cshtml.g.cs
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\_UserUpdatePartial.cshtml.g.cs
