@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace BlogApp.Mvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin,Editor")]
     public class HomeController : Controller
     {
         public IActionResult Index()
