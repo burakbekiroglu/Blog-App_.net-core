@@ -403,7 +403,6 @@ C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\ne
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_LayoutCssPartial.cshtml.g.cs
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_LayoutJsPartial.cshtml.g.cs
-C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_LayoutSideBarNavPartial.cshtml.g.cs
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\_CategoryAddPartial.cshtml.g.cs
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
@@ -416,3 +415,5 @@ C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\ne
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\UserLogin.cshtml.g.cs
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\_UserUpdatePartial.cshtml.g.cs
 C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\AccessDenied.cshtml.g.cs
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\Components\AdminMenu\Default.cshtml.g.cs
+C:\Users\Burak\Desktop\proje\Blog-App_.net-core\BlogApp\BlogApp.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\Components\UserMenu\Default.cshtml.g.cs
